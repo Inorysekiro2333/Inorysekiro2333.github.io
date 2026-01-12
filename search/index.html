@@ -304,8 +304,8 @@
     </section>
     
     <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.33.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+        
+        
     </section>
 </footer>
 
@@ -328,6 +328,7 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
 <style>
   @font-face {
     font-family: 'LXGWWenKai-Regular.ttf';
@@ -338,7 +339,11 @@
     --base-font-family: 'LXGWWenKai-Regular.ttf';
     --code-font-family: 'LXGWWenKai-Regular.ttf';
   }
-  #TableOfContents > ul, ol {
+</style>
+
+
+<style>
+    #TableOfContents > ul, ol {
         ul, ol {
             display: none;
         }
@@ -346,7 +351,11 @@
             display: block;
         }
     }
-  #backTopBtn {
+</style>
+
+
+<style>
+    #backTopBtn {
     display: none;
     position: fixed;
     bottom: 30px;
@@ -356,10 +365,13 @@
     height: 30px;
     background-image: url(https://Inorysekiro2333.github.io/icons/backTop.svg);
   }
-   
-    .highlight {
+</style>
+
+
+<style>
+      .highlight {
          
-        max-height: 600px;
+        max-height: 400px;
         overflow: hidden;
     }
 
@@ -397,9 +409,7 @@
         width: 22px;
         height: 16px;
     }
-
 </style>
-
 
 
 <script>
@@ -436,8 +446,11 @@
         });
     }
     initTocHide()
+</script>
 
-        
+
+<script>
+      
 
     function initScrollTop() {
         let rightSideBar = document.querySelector(".right-sidebar");
@@ -467,8 +480,11 @@
     }
 
     initScrollTop();
+</script>
 
-  function initCodeMoreBox() {
+
+<script>
+    function initCodeMoreBox() {
     let codeBlocks = document.querySelectorAll(".highlight");
     if (!codeBlocks) {
       return;

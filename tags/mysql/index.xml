@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Mysql on Inory</title>
+        <link>https://Inorysekiro2333.github.io/tags/mysql/</link>
+        <description>Recent content in Mysql on Inory</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>InorySekiro</copyright>
+        <lastBuildDate>Mon, 12 Jan 2026 22:09:09 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MySQL</title>
+        <link>https://Inorysekiro2333.github.io/p/mysql/</link>
+        <pubDate>Mon, 12 Jan 2026 21:36:13 +0800</pubDate>
+        
+        <guid>https://Inorysekiro2333.github.io/p/mysql/</guid>
+        <description>&lt;img src="https://Inorysekiro2333.github.io/p/mysql/MySQL.jpg" alt="Featured image of post MySQL" /&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
