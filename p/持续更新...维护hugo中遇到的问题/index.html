@@ -70,7 +70,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">Inory</a></h1>
-            <h2 class="site-description">一个抽象串子的Blog-v1</h2>
+            <h2 class="site-description">一个抽象串子的博客</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -337,6 +337,20 @@
         
 
         
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
     </footer>
     
 
@@ -452,37 +466,8 @@
 
 
     
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        const elementsToRender = [".main-article", ".widget--toc"];
+        
 
-        elementsToRender.forEach(selector => {
-            const element = document.querySelector(selector);
-            if (element) {
-                renderMathInElement(element, {
-                    delimiters: [
-                        { left: "$$", right: "$$", display: true },
-                        { left: "$", right: "$", display: false },
-                        { left: "\\(", right: "\\)", display: false },
-                        { left: "\\[", right: "\\]", display: true }
-                    ],
-                    ignoredClasses: ["gist"]
-                });
-            }
-        });
-    });
-</script>
     
 </article>
 
@@ -596,7 +581,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.b4654cd74006fe7475d7723cd7373672b5ea2035ab23404eb9ff511cb27b581c.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -799,6 +784,78 @@
   }
   
   initCodeMoreBox();
+</script>
+
+
+
+ <script src=https://Inorysekiro2333.github.io/background/sakura.js></script>
+
+
+ 
+  
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container"
+        ]
+    })
+</script>
+
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+</script>
+
+<script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+    })
+</script>
+
+
+
+
+
+
+
+    
+    <script src=https://Inorysekiro2333.github.io/js/topbar.min.js></script>
+
+<script>
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+	
+    document.addEventListener('pjax:complete', () => {
+        
+        
+        topbar.hide();
+    })
 </script>
 
     </body>
