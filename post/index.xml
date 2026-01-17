@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>InorySekiro</copyright>
-        <lastBuildDate>Thu, 15 Jan 2026 18:10:39 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 Jan 2026 20:43:55 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【RAG项目】企业级RAG项目实战</title>
         <link>https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</link>
         <pubDate>Thu, 15 Jan 2026 12:57:15 +0800</pubDate>
         
         <guid>https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</guid>
-        <description>&lt;hr&gt;
+        <description>&lt;img src="https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/PixPin_2026-01-17_20-13-22.jpg" alt="Featured image of post 【RAG项目】企业级RAG项目实战" /&gt;&lt;hr&gt;
 &lt;h2 id=&#34;克隆代码并部署&#34;&gt;克隆代码并部署
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/KongVermouth/rag.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;GitHub - KongVermouth/rag&lt;/a&gt;&lt;/p&gt;
@@ -963,12 +963,12 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>[持续更新]HUGO操作手册</title>
+        <title>【持续更新】HUGO操作手册</title>
         <link>https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</link>
         <pubDate>Tue, 13 Jan 2026 11:22:27 +0800</pubDate>
         
         <guid>https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</guid>
-        <description>&lt;h2 id=&#34;如何创建新的文章&#34;&gt;如何创建新的文章
+        <description>&lt;img src="https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/PixPin_2026-01-17_20-16-24.jpg" alt="Featured image of post 【持续更新】HUGO操作手册" /&gt;&lt;h2 id=&#34;如何创建新的文章&#34;&gt;如何创建新的文章
 &lt;/h2&gt;&lt;p&gt;进到dev目录，打开cmd终端，输入以下指令：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -978,23 +978,17 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new content post/&amp;lt;新建文章的目录&amp;gt;/index.md
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h2 id=&#34;修改默认文章模板&#34;&gt;修改默认文章模板
+&lt;/h2&gt;&lt;p&gt;在&lt;code&gt;archetypes\default.md&lt;/code&gt;中修改即可。&lt;/p&gt;
+</description>
         </item>
         <item>
-        <title>MySQL</title>
-        <link>https://Inorysekiro2333.github.io/p/mysql/</link>
-        <pubDate>Mon, 12 Jan 2026 21:36:13 +0800</pubDate>
-        
-        <guid>https://Inorysekiro2333.github.io/p/mysql/</guid>
-        <description>&lt;img src="https://Inorysekiro2333.github.io/p/mysql/MySQL.jpg" alt="Featured image of post MySQL" /&gt;</description>
-        </item>
-        <item>
-        <title>[Stack美化]一些样式修改</title>
+        <title>【Stack美化】一些样式修改</title>
         <link>https://Inorysekiro2333.github.io/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/</link>
         <pubDate>Sun, 11 Jan 2026 21:44:13 +0800</pubDate>
         
         <guid>https://Inorysekiro2333.github.io/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/</guid>
-        <description>&lt;h2 id=&#34;修改字体&#34;&gt;修改字体
+        <description>&lt;img src="https://Inorysekiro2333.github.io/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/1cc2da31-d479-4fb6-82a2-31dc69c2c7f0.jpg" alt="Featured image of post 【Stack美化】一些样式修改" /&gt;&lt;h2 id=&#34;修改字体&#34;&gt;修改字体
 &lt;/h2&gt;&lt;p&gt;（1）首先下载字体文件&lt;/p&gt;
 &lt;p&gt;（2）把字体放在 &lt;code&gt;assets/font&lt;/code&gt;下，自己创建文件夹&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/font.jpg&#34;
@@ -2537,17 +2531,17 @@
 </description>
         </item>
         <item>
-        <title>[持续更新...]维护Hugo中遇到的问题</title>
-        <link>https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+        <title>【持续更新】维护Hugo中遇到的问题</title>
+        <link>https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
         <pubDate>Sun, 11 Jan 2026 19:30:59 +0800</pubDate>
         
-        <guid>https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+        <guid>https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;h2 id=&#34;正文插入的图片无法正确显示&#34;&gt;正文插入的图片无法正确显示
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;问题描述&lt;/strong&gt;：在markdown文件中可以正确渲染的图片，但是在静态页面中无法正确渲染&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-18-08-PixPin_2026-01-12_12-18-05.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-18-08-PixPin_2026-01-12_12-18-05.jpg&#34;
 	width=&#34;642&#34;
 	height=&#34;312&#34;
-	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-18-08-PixPin_2026-01-12_12-18-05_hu_7c45b818f9aa2046.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-18-08-PixPin_2026-01-12_12-18-05_hu_69e7915d6d072ab2.jpg 1024w&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-18-08-PixPin_2026-01-12_12-18-05_hu_7c45b818f9aa2046.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-18-08-PixPin_2026-01-12_12-18-05_hu_69e7915d6d072ab2.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2556,10 +2550,10 @@
 		data-flex-basis=&#34;493px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-17-46-PixPin_2026-01-12_12-16-59.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-17-46-PixPin_2026-01-12_12-16-59.jpg&#34;
 	width=&#34;740&#34;
 	height=&#34;396&#34;
-	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-17-46-PixPin_2026-01-12_12-16-59_hu_171084cff65cd953.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-17-46-PixPin_2026-01-12_12-16-59_hu_41c8cacef549a804.jpg 1024w&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-17-46-PixPin_2026-01-12_12-16-59_hu_171084cff65cd953.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-17-46-PixPin_2026-01-12_12-16-59_hu_41c8cacef549a804.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2594,10 +2588,10 @@
 &lt;ul&gt;
 &lt;li&gt;截图工具以pixpin为例，设置手动保存和自动保存的后缀均为.jpg：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-24-01-PixPin_2026-01-12_12-23-28.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-24-01-PixPin_2026-01-12_12-23-28.jpg&#34;
 	width=&#34;631&#34;
 	height=&#34;452&#34;
-	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-24-01-PixPin_2026-01-12_12-23-28_hu_b5f8e9ab64325ba5.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-24-01-PixPin_2026-01-12_12-23-28_hu_d2f4a5939ecc6cb2.jpg 1024w&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-24-01-PixPin_2026-01-12_12-23-28_hu_b5f8e9ab64325ba5.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-24-01-PixPin_2026-01-12_12-23-28_hu_d2f4a5939ecc6cb2.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2611,10 +2605,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-26-00-PixPin_2026-01-12_12-25-58.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-26-00-PixPin_2026-01-12_12-25-58.jpg&#34;
 	width=&#34;671&#34;
 	height=&#34;537&#34;
-	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-26-00-PixPin_2026-01-12_12-25-58_hu_bce0c05fa9f421ef.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0...%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-26-00-PixPin_2026-01-12_12-25-58_hu_b85661ffbb95ef4d.jpg 1024w&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-26-00-PixPin_2026-01-12_12-25-58_hu_bce0c05fa9f421ef.jpg 480w, https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/2026-01-12-12-26-00-PixPin_2026-01-12_12-25-58_hu_b85661ffbb95ef4d.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
