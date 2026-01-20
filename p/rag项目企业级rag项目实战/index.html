@@ -10,7 +10,7 @@
 <meta property='og:description' content="实战部署学习过程中的一些踩坑">
 <meta property='og:url' content='https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/'>
 <meta property='og:site_name' content='Inory'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='agent' /><meta property='article:tag' content='rag' /><meta property='article:published_time' content='2026-01-15T12:57:15&#43;08:00'/><meta property='article:modified_time' content='2026-01-17T20:43:55&#43;08:00'/><meta property='og:image' content='https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/PixPin_2026-01-17_20-13-22.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='agent' /><meta property='article:tag' content='rag' /><meta property='article:published_time' content='2026-01-15T12:57:15&#43;08:00'/><meta property='article:modified_time' content='2026-01-20T21:13:30&#43;08:00'/><meta property='og:image' content='https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/PixPin_2026-01-17_20-13-22.jpg' />
 <meta name="twitter:title" content="【RAG项目】企业级RAG项目实战">
 <meta name="twitter:description" content="实战部署学习过程中的一些踩坑"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/PixPin_2026-01-17_20-13-22.jpg' />
@@ -298,8 +298,11 @@
         <li><a href="#跟着readmemd文件到步骤4启动docker容器时卡住">跟着README.MD文件到<strong>步骤4：启动Docker容器</strong>时卡住：</a></li>
         <li><a href="#建立数据库表">建立数据库表</a></li>
         <li><a href="#modelspy实体类缺失">models/*.py实体类缺失</a></li>
+        <li><a href="#加载会话列表失败">加载会话列表失败</a></li>
       </ol>
     </li>
+    <li><a href="#启动项目">启动项目</a></li>
+    <li><a href="#核心模块从chatpy开始">核心模块：从chat.py开始</a></li>
   </ol>
 </nav>
         </div>
@@ -386,7 +389,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 11 分钟
+                    阅读时长: 12 分钟
                 </time>
             </div>
         
@@ -1215,6 +1218,10 @@
 </span><span class="lnt">41
 </span><span class="lnt">42
 </span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
@@ -1257,8 +1264,12 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">is_deleted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&#34;deleted&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">is_pinned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># is_pinned既是列又是方法，名称冲突导致会话加载失败。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># def is_pinned(self) -&gt; bool:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># return self.is_pinned == 1</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 需要重命名方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_is_pinned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_pinned</span> <span class="o">==</span> <span class="mi">1</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -1385,7 +1396,71 @@
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total_time_ms</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>运行下面命令启动后端和前端：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python -m uvicorn app.main:app --reload --host 0.0.0.0 --port <span class="m">8000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">npm run dev
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>成功启动</p>
+<p><img src="/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2026-01-20-13-30-45-PixPin_2026-01-20_13-30-43.jpg"
+	width="1912"
+	height="394"
+	srcset="/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2026-01-20-13-30-45-PixPin_2026-01-20_13-30-43_hu_37de02330ec579b9.jpg 480w, /p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2026-01-20-13-30-45-PixPin_2026-01-20_13-30-43_hu_7875aeaac849aa40.jpg 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="485"
+		data-flex-basis="1164px"
+	
+></p>
+<h3 id="加载会话列表失败">加载会话列表失败
+</h3><p><code>session.py</code> 中 is_pinned既是列又是方法，名称冲突。需要重命名方法：</p>
+<p><img src="/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2026-01-20-13-36-29-PixPin_2026-01-20_13-36-25.jpg"
+	width="285"
+	height="113"
+	srcset="/p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2026-01-20-13-36-29-PixPin_2026-01-20_13-36-25_hu_55e8009bcb025a87.jpg 480w, /p/rag%E9%A1%B9%E7%9B%AE%E4%BC%81%E4%B8%9A%E7%BA%A7rag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2026-01-20-13-36-29-PixPin_2026-01-20_13-36-25_hu_bb1a820f1dfedb76.jpg 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
+></p>
+<h2 id="启动项目">启动项目
+</h2><ol>
+<li>
+<p>注册用户</p>
+</li>
+<li>
+<p>配置LLM：对话模型+嵌入模型</p>
+</li>
+<li>
+<p>设置API密钥：对话模型</p>
+</li>
+<li>
+<p>新建知识库，上传文档</p>
+</li>
+<li>
+<p>添加机器人</p>
+</li>
+<li>
+<p>开始对话</p>
+</li>
+</ol>
+<h2 id="核心模块从chatpy开始">核心模块：从chat.py开始
+</h2>
 </section>
 
 
@@ -1410,7 +1485,7 @@
 
 
         <span>
-            最后更新于 2026-01-17
+            最后更新于 2026-01-20
         </span>
     </section></footer>
 
