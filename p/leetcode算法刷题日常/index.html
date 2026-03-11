@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://Inorysekiro2333.github.io/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/'>
 
-<link rel="stylesheet" href="/scss/style.min.277b37902e8c6560c148d9c380409dd16d46a847f7315c0f00fc22b987f074c0.css"><meta property='og:title' content="【Leetcode】算法刷题日常">
+<link rel="stylesheet" href="/scss/style.min.7ed974c75e702723c68c173ca0eac7673919fb4328f7517552837a9d645e773f.css"><meta property='og:title' content="【Leetcode】算法刷题日常">
 <meta property='og:description' content=" Day1 无重复字符的最长子串 https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/\n解法：滑动窗口\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 class Solution { public int lengthOfLongestSubstring(String s) { int n = s.length(); // 因为只有英文字母、数字、符号和空格组成 // 所以创建一个长度为128（askii码）的数组用来记录字符出现的次数 int[] cnt = new int[128]; int ans = 0; int l = 0; char[] charS = s.toCharArray(); // 固定左l，遍历右r for(int r = 0; r &lt; n; r++) { char c = charS[r]; cnt[c]++; // r往后遍历，窗口内有字符重复时，左边l收缩窗口 while(cnt[c] &gt; 1) { cnt[charS[l]]--; l++; } // 更新ans为窗口长度 ans = Math.max(ans, r - l + 1); } return ans; } } LRU缓存机制 https://leetcode.cn/problems/lru-cache/description/\n">
 <meta property='og:url' content='https://Inorysekiro2333.github.io/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/'>
 <meta property='og:site_name' content='Inory'>
