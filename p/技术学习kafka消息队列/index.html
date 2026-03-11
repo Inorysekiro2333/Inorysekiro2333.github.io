@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head>
-	<meta name="generator" content="Hugo 0.157.0"><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一个抽象串子的博客">
-<title>Inory</title>
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" Kafka基本概念 topic：主题，消息归类的基本单元\npartitions：消息分区，通过偏移量offset来指定消息的位置，是实现消息的分布式管理的核心机制\nreplicas：分区副本，每个分区可以有多个副本，一个leader（读写）多个follower（拷贝）\n">
+<title>【技术学习】Kafka消息队列</title>
 
-<link rel='canonical' href='https://Inorysekiro2333.github.io/'>
+<link rel='canonical' href='https://Inorysekiro2333.github.io/p/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0kafka%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/'>
 
-<link rel="stylesheet" href="/scss/style.min.277b37902e8c6560c148d9c380409dd16d46a847f7315c0f00fc22b987f074c0.css"><meta property='og:title' content="Inory">
-<meta property='og:description' content="一个抽象串子的博客">
-<meta property='og:url' content='https://Inorysekiro2333.github.io/'>
+<link rel="stylesheet" href="/scss/style.min.277b37902e8c6560c148d9c380409dd16d46a847f7315c0f00fc22b987f074c0.css"><meta property='og:title' content="【技术学习】Kafka消息队列">
+<meta property='og:description' content=" Kafka基本概念 topic：主题，消息归类的基本单元\npartitions：消息分区，通过偏移量offset来指定消息的位置，是实现消息的分布式管理的核心机制\nreplicas：分区副本，每个分区可以有多个副本，一个leader（读写）多个follower（拷贝）\n">
+<meta property='og:url' content='https://Inorysekiro2333.github.io/p/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0kafka%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/'>
 <meta property='og:site_name' content='Inory'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-03-11T11:12:14&#43;08:00 '/>
-<meta name="twitter:title" content="Inory">
-<meta name="twitter:description" content="一个抽象串子的博客"><link rel="alternate" type="application/rss&#43;xml" href="https://Inorysekiro2333.github.io/index.xml">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Kafka' /><meta property='article:published_time' content='2026-03-09T16:16:18&#43;08:00'/><meta property='article:modified_time' content='2026-03-11T11:12:14&#43;08:00'/><meta property='og:image' content='https://Inorysekiro2333.github.io/p/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0kafka%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/Kafka.png' />
+<meta name="twitter:title" content="【技术学习】Kafka消息队列">
+<meta name="twitter:description" content=" Kafka基本概念 topic：主题，消息归类的基本单元\npartitions：消息分区，通过偏移量offset来指定消息的位置，是实现消息的分布式管理的核心机制\nreplicas：分区副本，每个分区可以有多个副本，一个leader（读写）多个follower（拷贝）\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://Inorysekiro2333.github.io/p/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0kafka%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/Kafka.png' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -119,7 +121,7 @@
         
         
         
-        <li  class='current' >
+        <li >
             <a href='/' >
                 
                 
@@ -272,60 +274,10 @@
     <aside class="sidebar right-sidebar sticky">
         
             
-                <form action="/search/" class="search-form widget" >
-        <p>
-            <label>搜索</label>
-            <input name="keyword" required placeholder="输入关键词..." />
-        
-            <button title="搜索">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-            </button>
-        </p>
-    </form>
-            
-        
-            
-                <section class="widget archives">
+                
+    <section class="widget archives">
         <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">归档</h2>
-
-        
-        
-        
-        
-        <div class="widget-archive--list">
-            <div class="archives-year">
-                    <a href="/archives/#2026">
-                        
-                            <span class="year">2026</span>
-                            <span class="count">5</span>
-                        
-                    </a> 
-                </div>
-            
-        </div>
-    </section>
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -335,82 +287,35 @@
 
 
 
-    </div>
-    <h2 class="widget-title section-title">分类</h2>
-
-    <div class="tagCloud-tags">
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
         
-            <a href="/categories/%E6%95%99%E7%A8%8B/" class="font_size_2">
-                教程
-            </a>
-        
-            <a href="/categories/hugo/" class="font_size_1">
-                HUGO
-            </a>
-        
-            <a href="/categories/%E5%8A%9B%E6%89%A3/" class="font_size_1">
-                力扣
-            </a>
-        
-            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="font_size_1">
-                学习
-            </a>
-        
-            <a href="/categories/%E7%AE%97%E6%B3%95/" class="font_size_1">
-                算法
-            </a>
-        
-            <a href="/categories/%E7%BE%8E%E5%8C%96/" class="font_size_1">
-                美化
-            </a>
-        
-    </div>
-</section>
-
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/css/">
-                Css
-            </a>
-        
-            <a href="/tags/html/">
-                Html
-            </a>
-        
-            <a href="/tags/hugo/">
-                Hugo
-            </a>
-        
-            <a href="/tags/kafka/">
-                Kafka
-            </a>
-        
-            <a href="/tags/leetcode/">
-                Leetcode
-            </a>
-        
-            <a href="/tags/markdown/">
-                Markdown
-            </a>
-        
-    </div>
-</section>
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#kafka基本概念">Kafka基本概念</a>
+      <ol>
+        <li><a href="#1-主题topic和分区partitions">1. 主题（topic）和分区（partitions）</a></li>
+        <li><a href="#2-副本replicas">2. 副本（replicas）</a></li>
+        <li><a href="#3-集群broker">3. 集群（Broker）</a></li>
+        <li><a href="#4-zookeeper">4. Zookeeper</a></li>
+      </ol>
+    </li>
+    <li><a href="#消费者组">消费者组</a></li>
+    <li><a href="#确认机制">确认机制</a></li>
+    <li><a href="#面试题">面试题</a>
+      <ol>
+        <li><a href="#2-说一下kafka中关于事务消息的实现">2. 说一下Kafka中关于事务消息的实现？</a></li>
+        <li><a href="#3-kafka的模型介绍一下kafka是推送还是拉取">3. kafka的模型介绍一下，kafka是推送还是拉取？</a></li>
+        <li><a href="#4-看过源码吗说说kafka处理请求的全流程">4. 看过源码吗？说说Kafka处理请求的全流程？</a></li>
+        <li><a href="#5-b站评分系统为什么用kafkakafka有什么特点">5. B站评分系统为什么用Kafka？（Kafka有什么特点？）</a></li>
+        <li><a href="#6-kafka如何保证消费顺序">6. Kafka如何保证消费顺序？</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
 
             
         
@@ -418,14 +323,7 @@
 
 
             <main class="main full-width">
-    
-    
-    
-
-    <section class="article-list">
-        
-            
-<article class="has-image">
+    <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image-wrapper">
             <div class="article-image">
@@ -540,324 +438,240 @@
     }
 </style>
 
-</article>
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image-wrapper">
-            <div class="article-image">
-                <a href="/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/" class="image-link">
-                    <img src="/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/119571089_hu_274db1dd0e348afe.jpg"
-                            srcset="/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/119571089_hu_274db1dd0e348afe.jpg 800w, /p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/119571089_hu_f82553406961d7e4.jpg 1600w"
-                            width="800"
-                            height="1029"
-                            loading="lazy"
-                            alt="Featured image of post 【Leetcode】算法刷题日常" class="featured-image"/>
-                    
-                </a>
-            </div>
-        </div>
-    
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E7%AE%97%E6%B3%95/" >
-                算法
-            </a>
-        
-            <a href="/categories/%E5%8A%9B%E6%89%A3/" >
-                力扣
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/">【Leetcode】算法刷题日常</a>
-        </h2>
-
-        
-    </div>
-
+    <section class="article-content">
     
     
+    <hr>
+<h2 id="kafka基本概念">Kafka基本概念
+</h2><p>topic：主题，消息归类的基本单元</p>
+<p>partitions：消息分区，通过偏移量offset来指定消息的位置，是实现消息的分布式管理的核心机制</p>
+<p>replicas：分区副本，每个分区可以有多个副本，一个leader（读写）多个follower（拷贝）</p>
+<p>broker集群：Kafka由一个或多个broker组成集群，每一个broker都是一个Kafka实例</p>
+<p>zookeeper：协调多个broker，存储元数据</p>
+<h3 id="1-主题topic和分区partitions">1. 主题（topic）和分区（partitions）
+</h3><p>在Kafka中要实现消息的发送与订阅，必须首先创建topic</p>
+<p>因为topic是Kafka进行消息归类的基本单元。topic接收生产者发布的消息，并将消息转发给消费者</p>
+<p>比如任务类的消息，就指定好任务类的topic，生产者根据topic吧消息发送到队列，消费者订阅这个topic消费消息</p>
+<p><img src="/image-20260309170032059.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309170032059"
+	
+	
+></p>
+<p>一个topic会分成多个分区，Kafka的分区特性是实现消息的分布式管理的核心机制。消息发送到topic的时候，实际上是发送给了topic中的某一个分区，并且被添加到分区的最后，通过一个偏移量offset来指定消息的位置</p>
+<p>分区机制是的一个topic的消息可以并行地存储和处理，从而提高了吞吐量</p>
+<p><img src="/image-20260309170355866.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309170355866"
+	
+	
+></p>
+<img src="./image-20260309170458615.png" alt="image-20260309170458615" style="zoom:67%;" />
+<p><strong>默认情况下，如果Key为null，会轮询分散到不同分区；如果指定了Key，则根据Key哈希到特定分区；如果强制指定了分区，则永远只发往该分区。</strong></p>
+<p>实际上每一个topic分区，都是Kafka实例中的一个文件夹：</p>
+<ul>
+<li>log：存储实际生产者发送的消息</li>
+<li>index：偏移量。消息的位置</li>
+<li>timeindex：时间戳</li>
+</ul>
+<p><img src="/image-20260309171857205.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309171857205"
+	
+	
+></p>
+<p>生产者给这个partition分区发送一条消息，就会在这三个文件中追加三条记录</p>
+<blockquote>
+<p>小结：一个topic中的一个partition分区，就是存放一个消息数据的文件夹</p>
+</blockquote>
+<h3 id="2-副本replicas">2. 副本（replicas）
+</h3><p>如果一个partition所在的Kafka实例挂了怎么办？是不是意味着这个分区上的消息都无法消费了？为了避免这种情况，定义了副本</p>
+<p>副本是分区的另一种表现方式，实际消息的读写交互都在副本上。</p>
+<p><img src="/image-20260309185333237.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309185333237"
+	
+	
+></p>
+<p>副本分为leader和follower，每个分区有一个leader和多个follower，一个分区的不同副本分别放在不同的Kafka实例中，这样做的目的是为了避免Kafka实例挂掉而导致整个分区消息无法消费（分散实例宕机带来的损耗）</p>
+<p>leader负责读写，follower只负责同步（主动从leader拉取消息，保持和leader数据一致）</p>
+<blockquote>
+<p>为什么这样设计？</p>
+<ul>
+<li><strong>保证一致性</strong>：如果客户端同时读写不同副本，可能会读到旧数据（因为Follower可能还没同步完）。</li>
+<li><strong>简化实现</strong>：所有读写都在Leader，Follower只负责备份，不用处理复杂的并发一致性协议。</li>
+</ul>
+</blockquote>
+<h3 id="3-集群broker">3. 集群（Broker）
+</h3><p>broker消息代理：是Kafka的核心组件，也是Kafka实例，负责消息存储、主题和分区的管理</p>
+<p>可以把Kafka和broker的关系理解成微服务集群和springboot的关系，某个很大访问量的服务，为了实现高可用，例如用户服务，就可以部署多个springboot框架的用户服务，这样就组成了一个用户的微服务集群。就像多个broker组成了Kafka集群，实现了高可用。</p>
+<p>每个broker都是一个独立的Kafka实例，多个broker共同承担存储和处理消息的任务</p>
+<p>生产者和消费者可以连接到集群中的任何一个broker来进行消息的生产和消费</p>
+<p><img src="/image-20260309192959808.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309192959808"
+	
+	
+></p>
+<h3 id="4-zookeeper">4. Zookeeper
+</h3><p>在Kafka 2.8及更早版本中，ZooKeeper主要用来协调Kafka的各个Broker（Broker注册与发现、选举分区副本leader），以及存储Kafka中的元数据（例如主题、分区、副本）即<strong>协调中心和元数据仓库</strong>。具体作用如下：</p>
+<ol>
+<li>
+<p>存储Kafka的元数据
+Kafka Broker在启动过程中，会把所有元信息（Topic的信息、分区的信息等、Broker的注册信息）在ZooKeeper注册并保持相关的元数据更新</p>
+<p>由于ZooKeeper提供了监听机制，生产者或消费者程序会在ZooKeeper上注册相关的监昕器，一旦ZooKeeper中记录的元信息发生变化，生产者或消费者能及时感知并进行相应调整。这样就保证了在实现集群的动态扩容或缩容的过程中，各个Broker间仍能自动实现负载均衡，并能感知集群的变化。同时，ZooKeeper利用监听的机制监听Broker和Leader副本的存活性</p>
+</li>
+<li>
+<p>管理 Broker
+在KafkaBroker启动成功后，会向Zookeeper注册Broker的信息，从而实现在服务器正常运行下的水平拓展
+不但可以实现 Broker的负载均衡，而且当增加 Broker 或某个Broker故障时，ZooKeeper 会通知生产者和消费者，这样可以保证整个系统正常运转
+同时，当我们成功创建Topic后，ZooKeeper也会维护Topic与Broker之间的对应关系，这是通过/brokers/topics/topic.name节点来记录</p>
+</li>
+<li>
+<p>管理消费者</p>
+<p>消费者可以使用 Consumer Group(消费组) 的形式消费 Kafka 集群中的消息数据。 消费者在启动的过程中需要指定一个Consumer Group 的 ID， 这个 ID 会被 ZooKeeper 记录和维护。 以保证同一份数据可以被同一个 Consumer Group 的不同消费者多次消费。同时ZooKeeper管理消费者的偏移量用于跟踪当前消费者消费的位置</p>
+</li>
+<li>
+<p>ZooKeeper对生产者的意义</p>
+<p>生产者在启动过程中，会向ZooKeeper中注册监听器，从而帮助生产者了解Topic中的分区信息，包括分区的增加、减少、副本的选举等。同时生产者通过动态了解运行情况实现负载均衡</p>
+<ol start="4">
+<li>
+<p>1 Kafka KRaft 式
+从Kafka 2.8开始引入了KRaft模式，旨在最终取代zooKeeper，将元数据管理功能集成到Kafka Broker 内部，进一步简化部署和运维，对比ZooKeeper优势:</p>
+<ol>
+<li>
+<p>简化集群部署和管理-不在需要zookeeper，简化了Kafka集群的部署和管理工作，资源占用更小</p>
+</li>
+<li>
+<p>提高可扩展性和弹性-单个集群中的分区数量可以扩展到数百万个。集群重启和故障恢复时间更短</p>
+</li>
+<li>
+<p>更高效的元数据传播-基于日志、事件驱动的元数据传播提高了Kafka许多核心功能的性能</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>目前KRaft只适用于新建集群，将现有的集群从zookeeper模式迁移到KRaft模式，需要等3.5版本，Kafka4.0(2025年3月发布)将完全删除zookeeper模式，仅支持KRaft模式。</p>
+<p>所以截止日前2025年，除了一些新项日外，Kafka在大部分项目中用的依旧是 zookeeper来作为Kafka的协调中心和元数据仓库</p>
+<p><img src="/image-20260309194939456.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309194939456"
+	
+	
+></p>
+<h2 id="消费者组">消费者组
+</h2><p>消费者组的概念：</p>
+<p>一个消费者可消费多个分区，就是可以消费多个分区的leader副本。</p>
+<p><img src="/image-20260309195756343.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309195756343"
+	
+	
+></p>
+<p>但是同一个分区只能被一个消费者消费，这样是为了提升效率</p>
+<blockquote>
+<p>如果一个分区被多个消费者消费，就会出现重复消费，重复消费必然就会出现竞争、所有会需要用到锁，这样增加了性能开销</p>
+</blockquote>
+<p><img src="/image-20260309195412308.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20260309195412308"
+	
+	
+></p>
+<ol>
+<li>发布订阅模式
+<ol>
+<li>只要订阅了这个topic的消费者组下的消费者，都能消费，只需要每个消费者单独命名为一个消费者组即可</li>
+</ol>
+</li>
+<li>点对点模式
+<ol>
+<li>如果一个消息只需要被一个消费者消费，就可以将这些消费者放进同一个groupid</li>
+</ol>
+</li>
+</ol>
+<h2 id="确认机制">确认机制
+</h2><ul>
+<li>
+<p>ack=0：生产者把消息扔给Kafka，<strong>根本不关心有没有收到</strong>，立刻认为发送成功。</p>
+<ul>
+<li>速度最快，安全性最低，如果网络抖动或者Kafka Broker刚好挂了，消息直接丢了，生产者完全不知道</li>
+</ul>
+</li>
+<li>
+<p>ack=1：生产者发送消息，<strong>分区的Leader副本</strong>收到消息并写入本地日志后，立即回复&quot;成功&quot;。</p>
+<ul>
+<li>Follower副本此时可能还没同步。</li>
+<li>如果Leader确认后，Follower还没来得及同步，Leader突然挂了，此时Follower成为新Leader，但这条消息不在新Leader上。<strong>这条消息就丢了！</strong></li>
+</ul>
+</li>
+<li>
+<p>ack=all或-1：生产者发送消息，Leader收到后，<strong>等待所有ISR（同步中的副本）里的Follower都同步完这条消息</strong>，才回复&quot;成功&quot;。</p>
+<ul>
+<li>只要ISR里至少有一个活着的副本，这条消息就<strong>绝对不会丢</strong>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="面试题">面试题
+</h2><h3 id="2-说一下kafka中关于事务消息的实现">2. 说一下Kafka中关于事务消息的实现？
+</h3><h3 id="3-kafka的模型介绍一下kafka是推送还是拉取">3. kafka的模型介绍一下，kafka是推送还是拉取？
+</h3><h3 id="4-看过源码吗说说kafka处理请求的全流程">4. 看过源码吗？说说Kafka处理请求的全流程？
+</h3><h3 id="5-b站评分系统为什么用kafkakafka有什么特点">5. B站评分系统为什么用Kafka？（Kafka有什么特点？）
+</h3><h3 id="6-kafka如何保证消费顺序">6. Kafka如何保证消费顺序？
+</h3><ol>
+<li>只设置一个分区，这样自然所有消息都放进一个分区了，也会保证顺序消费（不建议，失去了Kafka的意义）</li>
+<li>给消息设置相同的key，相同的key的消息都会放进同一个分区，B站的评分系统就是根据选手id进行的分区，同一个选手的消息只会进入一个分区，这对于后续的时间窗口聚合逻辑至关重要</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
     
-    
-    <footer class="article-time">
+    <section class="article-tags">
         
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-02-01T16:12:08&#43;08:00'>2026-02-01</time>
-            </div>
+            <a href="/tags/kafka/">Kafka</a>
         
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
+    </section>
 
 
-
-                <time class="article-time--reading">
-                    阅读时长: 22 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-
-
-<style>
-    .article-image-wrapper {
-        margin: -24px -24px 24px -24px;
-        overflow: hidden;
-        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
-    }
-
-    .article-image {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .article-image .image-link {
-        display: block;
-    }
-
-    .featured-image {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .article-image:hover .featured-image {
-        transform: scale(1.03);
-    }
-
-    @media (max-width: 768px) {
-        .article-image-wrapper {
-            margin: -16px -16px 20px -16px;
-        }
-    }
-</style>
-
-</article>
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image-wrapper">
-            <div class="article-image">
-                <a href="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/" class="image-link">
-                    <img src="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/PixPin_2026-01-17_20-16-24_hu_8838cdee90be559d.jpg"
-                            srcset="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/PixPin_2026-01-17_20-16-24_hu_8838cdee90be559d.jpg 800w, /p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/PixPin_2026-01-17_20-16-24_hu_31783b3c5913a6d9.jpg 1600w"
-                            width="800"
-                            height="1169"
-                            loading="lazy"
-                            alt="Featured image of post 【持续更新】HUGO操作手册" class="featured-image"/>
-                    
-                </a>
-            </div>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/hugo/" >
-                HUGO
-            </a>
-        
-            <a href="/categories/%E6%95%99%E7%A8%8B/" >
-                教程
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">【持续更新】HUGO操作手册</a>
-        </h2>
-
-        
-        <h3 class="article-subtitle">
-            记录一些HUGO的操作方法，随缘更新，想到哪写到哪
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-01-13T11:22:27&#43;08:00'>2026-01-13</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 2 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-
-
-<style>
-    .article-image-wrapper {
-        margin: -24px -24px 24px -24px;
-        overflow: hidden;
-        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
-    }
-
-    .article-image {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .article-image .image-link {
-        display: block;
-    }
-
-    .featured-image {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .article-image:hover .featured-image {
-        transform: scale(1.03);
-    }
-
-    @media (max-width: 768px) {
-        .article-image-wrapper {
-            margin: -16px -16px 20px -16px;
-        }
-    }
-</style>
-
-</article>
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image-wrapper">
-            <div class="article-image">
-                <a href="/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/" class="image-link">
-                    <img src="/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/1cc2da31-d479-4fb6-82a2-31dc69c2c7f0_hu_dadc68c5d70685da.jpg"
-                            srcset="/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/1cc2da31-d479-4fb6-82a2-31dc69c2c7f0_hu_dadc68c5d70685da.jpg 800w, /p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/1cc2da31-d479-4fb6-82a2-31dc69c2c7f0_hu_25c7f67e97edc35e.jpg 1600w"
-                            width="800"
-                            height="1169"
-                            loading="lazy"
-                            alt="Featured image of post 【Stack美化】一些样式修改" class="featured-image"/>
-                    
-                </a>
-            </div>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E7%BE%8E%E5%8C%96/" >
-                美化
-            </a>
-        
-            <a href="/categories/%E6%95%99%E7%A8%8B/" >
-                教程
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/stack%E7%BE%8E%E5%8C%96%E4%B8%80%E4%BA%9B%E6%A0%B7%E5%BC%8F%E4%BF%AE%E6%94%B9/">【Stack美化】一些样式修改</a>
-        </h2>
-
-        
-        <h3 class="article-subtitle">
-            样式修改胎教
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-01-11T21:44:13&#43;08:00'>2026-01-11</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -865,168 +679,58 @@
 
 
 
-                <time class="article-time--reading">
-                    阅读时长: 9 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
+        <span>
+            最后更新于 2026-03-11
+        </span>
+    </section></footer>
+
 
     
-</div>
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><div class="math-katex"></div>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
 
-</header>
-
-
-<style>
-    .article-image-wrapper {
-        margin: -24px -24px 24px -24px;
-        overflow: hidden;
-        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
-    }
-
-    .article-image {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .article-image .image-link {
-        display: block;
-    }
-
-    .featured-image {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .article-image:hover .featured-image {
-        transform: scale(1.03);
-    }
-
-    @media (max-width: 768px) {
-        .article-image-wrapper {
-            margin: -16px -16px 20px -16px;
-        }
-    }
-</style>
-
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
 </article>
+
+    
+
+    
+
+     
+    
         
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image-wrapper">
-            <div class="article-image">
-                <a href="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="image-link">
-                    <img src="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/114677804_hu_1e67e1d5e03c730d.jpg"
-                            srcset="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/114677804_hu_1e67e1d5e03c730d.jpg 800w, /p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/114677804_hu_d919d1bb512fb6b.jpg 1600w"
-                            width="800"
-                            height="1200"
-                            loading="lazy"
-                            alt="Featured image of post 【持续更新】维护Hugo中遇到的问题" class="featured-image"/>
-                    
-                </a>
-            </div>
-        </div>
     
 
-    <div class="article-details">
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E7%BB%B4%E6%8A%A4hugo%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">【持续更新】维护Hugo中遇到的问题</a>
-        </h2>
-
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published" datetime='2026-01-11T19:30:59&#43;08:00'>2026-01-11</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 1 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-
-
-<style>
-    .article-image-wrapper {
-        margin: -24px -24px 24px -24px;
-        overflow: hidden;
-        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
-    }
-
-    .article-image {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .article-image .image-link {
-        display: block;
-    }
-
-    .featured-image {
-        width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .article-image:hover .featured-image {
-        transform: scale(1.03);
-    }
-
-    @media (max-width: 768px) {
-        .article-image-wrapper {
-            margin: -16px -16px 20px -16px;
-        }
-    }
-</style>
-
-</article>
-        
-    </section><footer class="site-footer">
+    <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
@@ -1040,6 +744,86 @@
         
     </section>
 </footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
 
             </main>
         </div>
