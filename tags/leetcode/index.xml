@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>InorySekiro</copyright>
-        <lastBuildDate>Mon, 09 Mar 2026 16:13:26 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Mar 2026 00:00:09 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【Leetcode】算法刷题日常</title>
         <link>https://Inorysekiro2333.github.io/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/</link>
         <pubDate>Sun, 01 Feb 2026 16:12:08 +0800</pubDate>
@@ -425,18 +425,16 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;解释：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;big + equal = nums.size - small；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果big + equal的元素个数小于 k ，说明第k大的元素不在big和equal中，只能在small中；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;因为big和equal中的元素都比small中的大，所以在small中需要找&lt;strong&gt;第 k - (big + equeal的数量) 大的元素&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;big + equal = nums.size - small；&lt;/li&gt;
+&lt;li&gt;如果big + equal的元素个数小于 k ，说明第k大的元素不在big和equal中，只能在small中；&lt;/li&gt;
+&lt;li&gt;因为big和equal中的元素都比small中的大，所以在small中需要找&lt;strong&gt;第 k - (big + equeal的数量) 大的元素&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;比如，我要找到第3大的元素，big里面有1个元素，equal里面有1个元素，那第3大的元素肯定在small里，所以我们要在small中找第 （3 - 1 - 1 = 1）大的元素&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;k个一组反转链表hard&#34;&gt;k个一组反转链表hard
+&lt;h3 id=&#34;k个一组反转链表hard&#34;&gt;k个一组反转链表hard（🌟）
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://leetcode.cn/problems/reverse-nodes-in-k-group/description/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://leetcode.cn/problems/reverse-nodes-in-k-group/description/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/2026-02-01-20-08-20-PixPin_2026-02-01_20-08-18.jpg&#34;
@@ -944,7 +942,7 @@ b+ (a -c)&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
-&lt;h3 id=&#34;合并k个升序链表hard&#34;&gt;合并k个升序链表hard
+&lt;h3 id=&#34;合并k个升序链表hard&#34;&gt;合并k个升序链表hard（🌟）
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://leetcode.cn/problems/merge-k-sorted-lists/description/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://leetcode.cn/problems/merge-k-sorted-lists/description/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/leetcode%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98%E6%97%A5%E5%B8%B8/2026-02-02-20-40-09-PixPin_2026-02-02_20-40-08.jpg&#34;
