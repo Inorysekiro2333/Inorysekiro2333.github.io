@@ -5,9 +5,9 @@
         <link>https://Inorysekiro2333.github.io/tags/</link>
         <description>Recent content in Tags on Inory</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
+        <language>en-us</language>
         <copyright>InorySekiro</copyright>
-        <lastBuildDate>Mon, 16 Mar 2026 00:00:09 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Mar 2026 15:14:29 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Kafka</title>
         <link>https://Inorysekiro2333.github.io/tags/kafka/</link>
         <pubDate>Mon, 09 Mar 2026 16:16:18 +0800</pubDate>
@@ -69,6 +69,14 @@
         <pubDate>Sun, 11 Jan 2026 21:44:13 +0800</pubDate>
         
         <guid>https://Inorysekiro2333.github.io/tags/markdown/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Golang</title>
+        <link>https://Inorysekiro2333.github.io/tags/golang/</link>
+        <pubDate>Tue, 25 Mar 2025 10:43:29 +0800</pubDate>
+        
+        <guid>https://Inorysekiro2333.github.io/tags/golang/</guid>
         <description></description>
         </item>
         
