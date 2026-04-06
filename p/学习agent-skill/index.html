@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="学习部署Agent Skill相关的技能">
+<title>【学习】Agent-Skill</title>
+
+<link rel='canonical' href='https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/'>
+
+<link rel="stylesheet" href="/scss/style.min.b43cda0dcd3d1831d85bf5eb35a0087bf1977179222fec5ddf86c9ed369c1114.css"><meta property='og:title' content="【学习】Agent-Skill">
+<meta property='og:description' content="学习部署Agent Skill相关的技能">
+<meta property='og:url' content='https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/'>
+<meta property='og:site_name' content='Inory'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='agent' /><meta property='article:tag' content='skill' /><meta property='article:published_time' content='2026-04-06T20:59:23&#43;08:00'/><meta property='article:modified_time' content='2026-04-06T21:51:25&#43;08:00'/><meta property='og:image' content='https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/skill.jpg' />
+<meta name="twitter:title" content="【学习】Agent-Skill">
+<meta name="twitter:description" content="学习部署Agent Skill相关的技能"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/skill.jpg' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_3baf8946c7281180.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤡</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Inory</a></h1>
+            <h2 class="site-description">一个抽象串子的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Inorysekiro2333'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页 | Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E-about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于 | About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档 | Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索 | Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5-links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接 | Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://Inorysekiro2333.github.io/" selected>简体中文</option>
+                                
+                                    <option value="https://Inorysekiro2333.github.io/en/" >English</option>
+                                
+                                    <option value="https://Inorysekiro2333.github.io/ja/" >日本語</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前置安装claude-codewindows">【前置】安装Claude Code（Windows）</a>
+      <ol>
+        <li><a href="#步骤一官方提供了几种下载的方式这里选择windows的powershell">步骤一、官方提供了几种下载的方式，这里选择windows的powershell</a></li>
+        <li><a href="#步骤二测试claude命令">步骤二、测试<code>claude</code>命令</a></li>
+        <li><a href="#步骤三申请-minimax-的api-key">步骤三、申请 Minimax 的API Key</a></li>
+        <li><a href="#步骤四下载cc-switch">步骤四、下载CC-switch</a></li>
+        <li><a href="#步骤五测试">步骤五、测试</a></li>
+      </ol>
+    </li>
+    <li><a href="#什么是skill">什么是Skill？</a></li>
+    <li><a href="#skillmd-详解">SKILL.md 详解</a>
+      <ol>
+        <li><a href="#基本结构">基本结构</a></li>
+        <li><a href="#关键字段">关键字段</a></li>
+        <li><a href="#编写技巧">编写技巧</a></li>
+      </ol>
+    </li>
+    <li><a href="#创建自己的-skill">创建自己的 Skill</a>
+      <ol>
+        <li><a href="#需求分析">需求分析</a></li>
+        <li><a href="#目录结构">目录结构</a></li>
+        <li><a href="#编写-skillmd">编写 SKILL.md</a></li>
+        <li><a href="#部署-skill">部署 Skill</a></li>
+      </ol>
+    </li>
+    <li><a href="#常用-skill-推荐">常用 Skill 推荐</a></li>
+    <li><a href="#参考资源">参考资源</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image-wrapper">
+            <div class="article-image">
+                <a href="/p/%E5%AD%A6%E4%B9%A0agent-skill/" class="image-link">
+                    <img src="/p/%E5%AD%A6%E4%B9%A0agent-skill/skill_hu_11a2b6317ccebf21.jpg"
+                            srcset="/p/%E5%AD%A6%E4%B9%A0agent-skill/skill_hu_11a2b6317ccebf21.jpg 800w, /p/%E5%AD%A6%E4%B9%A0agent-skill/skill_hu_8a373b278f36aac8.jpg 1600w"
+                            width="800"
+                            height="320"
+                            loading="lazy"
+                            alt="Featured image of post 【学习】Agent-Skill" class="featured-image"/>
+                    
+                </a>
+            </div>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/" >
+                学习
+            </a>
+        
+            <a href="/categories/agent/" >
+                Agent
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E5%AD%A6%E4%B9%A0agent-skill/">【学习】Agent-Skill</a>
+        </h2>
+
+        
+        <h3 class="article-subtitle">
+            学习部署Agent Skill相关的技能
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-04-06T20:59:23&#43;08:00'>2026-04-06</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 4 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+
+<style>
+    .article-image-wrapper {
+        margin: -24px -24px 24px -24px;
+        overflow: hidden;
+        border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+    }
+
+    .article-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .article-image .image-link {
+        display: block;
+    }
+
+    .featured-image {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .article-image:hover .featured-image {
+        transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+        .article-image-wrapper {
+            margin: -16px -16px 20px -16px;
+        }
+    }
+</style>
+
+
+    <section class="article-content">
+    
+    
+    <h2 id="前置安装claude-codewindows">【前置】安装Claude Code（Windows）
+</h2><h3 id="步骤一官方提供了几种下载的方式这里选择windows的powershell">步骤一、官方提供了几种下载的方式，这里选择windows的powershell
+</h3><p><img src="/p/%E5%AD%A6%E4%B9%A0agent-skill/1856024074206231.jpg"
+	width="981"
+	height="888"
+	srcset="/p/%E5%AD%A6%E4%B9%A0agent-skill/1856024074206231_hu_ae3c9c2003b92555.jpg 480w, /p/%E5%AD%A6%E4%B9%A0agent-skill/1856024074206231_hu_a7fb20f4fc2f1e1f.jpg 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="110"
+		data-flex-basis="265px"
+	
+></p>
+<p>管理员运行Powershell，输入下面指令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">irm https://claude.ai/install.ps1 <span class="p">|</span> iex
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成以后（安装过程可能需要开梯子，我是开梯子安装的）会看到下面的指令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">PS C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt; irm https://claude.ai/install.ps1 <span class="p">|</span> iex
+</span></span><span class="line"><span class="cl">Setting up Claude Code...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">√ Claude Code successfully installed!
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Version: 2.1.92
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Location: C:<span class="se">\U</span>sers<span class="se">\L</span>zh<span class="se">\.</span>local<span class="se">\b</span>in<span class="se">\c</span>laude.exe
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Next: Run claude --help to get started
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">‼ Setup notes:
+</span></span><span class="line"><span class="cl">  • Native installation exists but C:<span class="se">\U</span>sers<span class="se">\L</span>zh<span class="se">\.</span>local<span class="se">\b</span>in is not in your PATH. Add it by opening: System Properties →
+</span></span><span class="line"><span class="cl">  Environment Variables → Edit User PATH → New → Add the path above. Then restart your terminal.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">✅ Installation complete!
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里提示了<code>but C:\Users\Lzh\.local\bin is not in your PATH.</code>，显示环境变量没加，根据后面的提示添加环境变量</p>
+<p>如果 Windows 安装后若提示找不到 <code>claude</code> 命令，通常是环境变量问题</p>
+<h3 id="步骤二测试claude命令">步骤二、测试<code>claude</code>命令
+</h3><p>随便打开一个终端，输入 <code>claude</code> 命令测试一下安装效果，如果是这样子的就说明安装成功了</p>
+<p><img src="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406210949389.png"
+	width="945"
+	height="308"
+	srcset="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406210949389_hu_143885d0c521c5f9.png 480w, /p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406210949389_hu_cefde6f69b135440.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="306"
+		data-flex-basis="736px"
+	
+></p>
+<p>然后先选择2退出，因为各种原因，国内无法使用claude原生的模型，因此我们选择minimax的供应商，minimax原生支持anthropic协议，对claude支持会比较好。</p>
+<h3 id="步骤三申请-minimax-的api-key">步骤三、申请 Minimax 的API Key
+</h3><p>来到minimax的开发者平台 <a class="link" href="https://platform.minimaxi.com/docs/api-reference/api-overview"  target="_blank" rel="noopener"
+    >https://platform.minimaxi.com/docs/api-reference/api-overview</a></p>
+<p>订阅并获取一个token plan的key</p>
+<p><img src="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211514123.png"
+	width="818"
+	height="283"
+	srcset="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211514123_hu_3b57f27244c5326b.png 480w, /p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211514123_hu_2c70f6a83dc5d9b9.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="289"
+		data-flex-basis="693px"
+	
+></p>
+<h3 id="步骤四下载cc-switch">步骤四、下载CC-switch
+</h3><p>CC-Switch 是一个用于切换 Claude Code 供应商（如官方、GLM、DeepSeek）的工具。https://github.com/farion1231/cc-switch/releases</p>
+<p>安装完后配置：</p>
+<ol>
+<li><strong>必须</strong>先添加一个官方供应商（即使没账号），否则可能出错。</li>
+<li>添加第三方供应商（如Minimax），输入 API Key。</li>
+<li>点击「启用」你想要的供应商。</li>
+</ol>
+<p><img src="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211922102.png"
+	width="900"
+	height="680"
+	srcset="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211922102_hu_d24a03d8293898c9.png 480w, /p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211922102_hu_4a0c64e3e960f621.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="317px"
+	
+></p>
+<p><img src="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211944193.png"
+	width="900"
+	height="680"
+	srcset="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211944193_hu_3c283803dc7ef161.png 480w, /p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211944193_hu_95e6ce9efe0b9e07.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="317px"
+	
+></p>
+<h3 id="步骤五测试">步骤五、测试
+</h3><p>添加并启用供应商以后，来到vscode随便打开一个工作文件夹，创建一个新的终端，输入 <code>claude</code></p>
+<p><img src="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406212209353.png"
+	width="480"
+	height="350"
+	srcset="/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406212209353_hu_1370e6cf7cbe8758.png 480w, /p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406212209353_hu_dd5a87681f1ab2b4.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="137"
+		data-flex-basis="329px"
+	
+></p>
+<p>显示模型为MiniMax-M2.7，并且可以成功调用，说明已经配置好了</p>
+<hr>
+<h2 id="什么是skill">什么是Skill？
+</h2><p>一句话总结：Skill就是<strong>封装好的标准化工作流 / 专业知识</strong>（Markdown + 脚本），告诉 AI <strong>&ldquo;按什么步骤、规范、逻辑&rdquo;</strong> 完成任务</p>
+<p>一个skill的目录结构一般长这样：</p>
+<img src="1856022879367403.jpg" style="zoom:30%;" />
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">qiuzhi-creative/
+</span></span><span class="line"><span class="cl">├── SKILL.md
+</span></span><span class="line"><span class="cl">├── scripts/
+</span></span><span class="line"><span class="cl">├── references/
+</span></span><span class="line"><span class="cl">└── assets/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>基本上一个skill都包含这些文件：</p>
+<ol>
+<li><strong>SKILL.md</strong>：存放描述Skill的元信息，告诉agent应该怎么使用这个skill</li>
+<li><strong>scripts</strong>：存放执行脚本，agent一般是不会看里面的具体实现的</li>
+<li><strong>references</strong>：参考文档，在SKILL.md写的操作指南中，会引导ai根据不同的需求情况来参考references下的文档，所以这里面放的文档可以进一步的细分（SKILL.md教ai怎么使用skill，references的md提供具体使用案例供ai参考）</li>
+<li><strong>assets</strong>：也是存放参考资产的目录（可以放图片、json、html）来进一步约束skill的使用</li>
+</ol>
+<hr>
+<h2 id="skillmd-详解">SKILL.md 详解
+</h2><p>SKILL.md 是 Skill 的核心入口文件，agent 会读取这个文件来理解如何使用这个技能。</p>
+<h3 id="基本结构">基本结构
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">name: skill-name
+</span></span><span class="line"><span class="cl">description: 一句话描述这个技能的作用
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># Skill Title
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">详细描述这个技能的功能和使用场景。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## When to Use
+</span></span></span><span class="line"><span class="cl">描述什么时候应该使用这个技能。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## How to Use
+</span></span></span><span class="line"><span class="cl">详细的使用说明和步骤。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="关键字段">关键字段
+</h3><ul>
+<li><strong>name</strong>：Skill 的名称，使用 kebab-case 命名</li>
+<li><strong>description</strong>：简短描述，用于 agent 判断何时调用此技能</li>
+<li><strong>When to Use</strong>：触发条件，告诉 agent 在什么情况下使用</li>
+<li><strong>How to Use</strong>：具体使用方法</li>
+</ul>
+<h3 id="编写技巧">编写技巧
+</h3><ol>
+<li><strong>description 要具体</strong>：让 agent 能准确判断是否需要调用</li>
+<li><strong>When to Use 要清晰</strong>：列出具体的触发场景</li>
+<li><strong>How to Use 要详细</strong>：包含命令、参数、示例</li>
+</ol>
+<hr>
+<h2 id="创建自己的-skill">创建自己的 Skill
+</h2><h3 id="需求分析">需求分析
+</h3><p>在创建之前，先问自己：</p>
+<ul>
+<li>这个 Skill 解决什么问题？</li>
+<li>什么时候应该调用它？</li>
+<li>需要哪些输入和输出？</li>
+</ul>
+<h3 id="目录结构">目录结构
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">my-skill/
+</span></span><span class="line"><span class="cl">├── SKILL.md              # 核心文件
+</span></span><span class="line"><span class="cl">├── scripts/
+</span></span><span class="line"><span class="cl">│   └── run.sh           # 执行脚本
+</span></span><span class="line"><span class="cl">├── references/
+</span></span><span class="line"><span class="cl">│   └── guide.md         # 参考文档
+</span></span><span class="line"><span class="cl">└── assets/
+</span></span><span class="line"><span class="cl">    └── template.json    # 资源文件
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="编写-skillmd">编写 SKILL.md
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">name: my-skill
+</span></span><span class="line"><span class="cl">description: 解决某个特定任务的技能
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># My Skill
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## Overview
+</span></span></span><span class="line"><span class="cl">简要描述这个技能的功能。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## When to Use
+</span></span></span><span class="line"><span class="cl"><span class="k">-</span> 用户要求完成某某任务时
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 遇到某个特定问题时
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## How to Use
+</span></span></span><span class="line"><span class="cl"><span class="k">1.</span> 第一步操作
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> 第二步操作
+</span></span><span class="line"><span class="cl"><span class="k">3.</span> 第三步操作
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## Parameters
+</span></span></span><span class="line"><span class="cl"><span class="k">-</span> param1: 参数说明
+</span></span><span class="line"><span class="cl"><span class="k">-</span> param2: 参数说明
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="部署-skill">部署 Skill
+</h3><p>将完整的 Skill 目录放入 Claude Code 的 skills 目录：</p>
+<ul>
+<li>Windows: <code>C:\Users\&lt;用户名&gt;\.claude\skills\</code></li>
+<li>macOS/Linux: <code>~/.claude/skills/</code></li>
+</ul>
+<p>放入后重启 Claude Code 即可使用。</p>
+<hr>
+<h2 id="常用-skill-推荐">常用 Skill 推荐
+</h2><ol>
+<li><strong>paper-2-web</strong>：将论文转换为网站/海报/视频</li>
+<li><strong>simplify</strong>：代码优化和重构</li>
+<li><strong>planning-with-files</strong>：基于文件的复杂任务规划</li>
+<li><strong>docx</strong>：Word 文档处理</li>
+<li><strong>xlsx</strong>：Excel 表格处理</li>
+<li><strong>pdf</strong>：PDF 文档处理</li>
+</ol>
+<hr>
+<h2 id="参考资源">参考资源
+</h2><ul>
+<li><a class="link" href="https://docs.claude.ai"  target="_blank" rel="noopener"
+    >Claude Code 官方文档</a></li>
+<li><a class="link" href="https://github.com/anthropics/claude-code"  target="_blank" rel="noopener"
+    >Skill 开发指南</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/skill/">Skill</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-04-06
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><div class="math-katex"></div>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                <article class="has-image">
+    <a href="/p/rag%E9%A1%B9%E7%9B%AErag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/">
+
+        
+            <div class="article-image">
+                <img src="/p/rag%E9%A1%B9%E7%9B%AErag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/PixPin_2026-01-17_20-13-22.da8c422062476269387c4e015ea277ab_hu_369003b73ce802f4.jpg"
+                        width="250"
+                        height="150"
+                        loading="lazy"
+                        alt="Featured image of post 【RAG项目】RAG项目实战"
+                        
+                        data-hash="md5-2oxCIGJHYmk4fE4BXqJ3qw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【RAG项目】RAG项目实战</h2>
+        </div>
+    </a>
+</article>
+
+            
+                <article class="has-image">
+    <a href="/p/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0kafka%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
+
+        
+            <div class="article-image">
+                <img src="/p/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0kafka%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/Kafka.c45f99289b588a42f6e6cbad57f68e21_hu_6ea7498382fb1513.png"
+                        width="250"
+                        height="150"
+                        loading="lazy"
+                        alt="Featured image of post 【技术学习】Kafka消息队列"
+                        
+                        data-hash="md5-xF&#43;ZKJtYikL25sutV/aOIQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【技术学习】Kafka消息队列</h2>
+        </div>
+    </a>
+</article>
+
+            
+                <article class="has-image">
+    <a href="/p/%E5%AD%A6%E4%B9%A0golang%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AE%9E%E6%88%98/">
+
+        
+            <div class="article-image">
+                <img src="/p/%E5%AD%A6%E4%B9%A0golang%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AE%9E%E6%88%98/PixPin_2026-03-26_15-02-34.bc64c839f81072317d1f2f80d941ddae_hu_4b920ed84a1b58d0.png"
+                        width="250"
+                        height="150"
+                        loading="lazy"
+                        alt="Featured image of post 【学习】Golang学习与实战"
+                        
+                        data-hash="md5-vGTIOfgQcjF9Hy&#43;A2UHdrg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">【学习】Golang学习与实战</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 InorySekiro
+    </section>
+    
+    <section class="powerby">
+        
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+    
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.b4654cd74006fe7475d7723cd7373672b5ea2035ab23404eb9ff511cb27b581c.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<style>
+  @font-face {
+    font-family: 'LXGWWenKai-Regular.ttf';
+    src: url(https://Inorysekiro2333.github.io/font/LXGWWenKai-Regular.ttf) format('truetype');
+  }
+
+  :root {
+    --base-font-family: 'LXGWWenKai-Regular.ttf';
+    --code-font-family: 'LXGWWenKai-Regular.ttf';
+  }
+</style>
+
+
+<style>
+    #TableOfContents > ul, ol {
+        ul, ol {
+            display: none;
+        }
+        .open {
+            display: block;
+        }
+    }
+</style>
+
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 100;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        background: var(--card-background);
+        border: 1px solid var(--line-color);
+        border-radius: 12px;
+        box-shadow: var(--shadow-l1);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #backTopBtn:hover {
+        background: var(--accent-color);
+        border-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-l2);
+    }
+
+    #backTopBtn svg {
+        width: 20px;
+        height: 20px;
+        color: var(--card-text-color);
+        transition: color 0.3s ease;
+    }
+
+    #backTopBtn:hover svg {
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        #backTopBtn {
+            right: 16px;
+            bottom: 16px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+
+<style>
+      .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+
+<script>
+    function initCodeHeader() {
+        const codeBlocks = document.querySelectorAll('.highlight');
+        codeBlocks.forEach(block => {
+            
+            if (block.querySelector('.highlight-header')) {
+                return;
+            }
+            
+            const header = document.createElement('div');
+            header.className = 'highlight-header';
+            
+            const colors = ['#ff5f56', '#ffbd2e', '#27c93f'];
+            colors.forEach(color => {
+                const dot = document.createElement('span');
+                dot.className = 'highlight-dot';
+                dot.style.background = color;
+                header.appendChild(dot);
+            });
+            
+            block.insertBefore(header, block.firstChild);
+        });
+    }
+    initCodeHeader();
+</script>
+
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+
+<script>
+    function initScrollTop() {
+        
+        if (document.getElementById('backTopBtn')) {
+            document.getElementById('backTopBtn').remove();
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>`;
+        btn.onclick = backToTop;
+        
+        document.body.appendChild(btn);
+
+        
+        window.addEventListener('scroll', function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+    }
+
+    function backToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    initScrollTop();
+</script>
+
+
+<script>
+    function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://Inorysekiro2333.github.io/icons/codeMore.png"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+
+
+ <script src=https://Inorysekiro2333.github.io/background/sakura.js></script>
+
+
+ 
+  
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
+<script>
+    var pjax = new Pjax({
+        selectors: [
+            ".main-container"
+        ]
+    })
+</script>
+
+<script>
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            if (responseText) {
+                
+                let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+                
+                let bodyClass = newDom.body.className;
+                document.body.setAttribute("class", bodyClass)
+            }
+            
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+            
+        }
+    }
+</script>
+
+<script>
+    document.addEventListener('pjax:complete', () => {
+        
+        window.Stack.init();
+        
+        initCodeHeader();
+        
+        initScrollTop();
+        
+        initCodeMoreBox();
+    })
+</script>
+
+
+
+
+
+
+
+    
+    <script src=https://Inorysekiro2333.github.io/js/topbar.min.js></script>
+
+<script>
+    
+    topbar.config({
+        barColors: {
+            '0': 'rgba(255,  255, 255, 1)', 
+            '1.0': 'rgba(0, 149, 234,  1)' 
+        }
+    })
+	
+    document.addEventListener('pjax:send', () => {
+        
+        topbar.show();
+    })
+	
+    document.addEventListener('pjax:complete', () => {
+        
+        
+        topbar.hide();
+    })
+</script>
+
+    </body>
+</html>

@@ -7,7 +7,344 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>InorySekiro</copyright>
-        <lastBuildDate>Sat, 14 Mar 2026 00:00:09 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/tags/agent/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Apr 2026 21:51:25 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/tags/agent/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>【学习】Agent-Skill</title>
+        <link>https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/</link>
+        <pubDate>Mon, 06 Apr 2026 20:59:23 +0800</pubDate>
+        
+        <guid>https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/</guid>
+        <description>&lt;img src="https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/skill.jpg" alt="Featured image of post 【学习】Agent-Skill" /&gt;&lt;h2 id=&#34;前置安装claude-codewindows&#34;&gt;【前置】安装Claude Code（Windows）
+&lt;/h2&gt;&lt;h3 id=&#34;步骤一官方提供了几种下载的方式这里选择windows的powershell&#34;&gt;步骤一、官方提供了几种下载的方式，这里选择windows的powershell
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/1856024074206231.jpg&#34;
+	width=&#34;981&#34;
+	height=&#34;888&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/1856024074206231_hu_ae3c9c2003b92555.jpg 480w, https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/1856024074206231_hu_a7fb20f4fc2f1e1f.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;110&#34;
+		data-flex-basis=&#34;265px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;管理员运行Powershell，输入下面指令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;irm https://claude.ai/install.ps1 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; iex
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成以后（安装过程可能需要开梯子，我是开梯子安装的）会看到下面的指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PS C:&lt;span class=&#34;se&#34;&gt;\W&lt;/span&gt;indows&lt;span class=&#34;se&#34;&gt;\s&lt;/span&gt;ystem32&amp;gt; irm https://claude.ai/install.ps1 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; iex
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Setting up Claude Code...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;√ Claude Code successfully installed!
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Version: 2.1.92
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Location: C:&lt;span class=&#34;se&#34;&gt;\U&lt;/span&gt;sers&lt;span class=&#34;se&#34;&gt;\L&lt;/span&gt;zh&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;local&lt;span class=&#34;se&#34;&gt;\b&lt;/span&gt;in&lt;span class=&#34;se&#34;&gt;\c&lt;/span&gt;laude.exe
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Next: Run claude --help to get started
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;‼ Setup notes:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  • Native installation exists but C:&lt;span class=&#34;se&#34;&gt;\U&lt;/span&gt;sers&lt;span class=&#34;se&#34;&gt;\L&lt;/span&gt;zh&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;local&lt;span class=&#34;se&#34;&gt;\b&lt;/span&gt;in is not in your PATH. Add it by opening: System Properties →
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  Environment Variables → Edit User PATH → New → Add the path above. Then restart your terminal.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✅ Installation complete!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里提示了&lt;code&gt;but C:\Users\Lzh\.local\bin is not in your PATH.&lt;/code&gt;，显示环境变量没加，根据后面的提示添加环境变量&lt;/p&gt;
+&lt;p&gt;如果 Windows 安装后若提示找不到 &lt;code&gt;claude&lt;/code&gt; 命令，通常是环境变量问题&lt;/p&gt;
+&lt;h3 id=&#34;步骤二测试claude命令&#34;&gt;步骤二、测试&lt;code&gt;claude&lt;/code&gt;命令
+&lt;/h3&gt;&lt;p&gt;随便打开一个终端，输入 &lt;code&gt;claude&lt;/code&gt; 命令测试一下安装效果，如果是这样子的就说明安装成功了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406210949389.png&#34;
+	width=&#34;945&#34;
+	height=&#34;308&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406210949389_hu_143885d0c521c5f9.png 480w, https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406210949389_hu_cefde6f69b135440.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;306&#34;
+		data-flex-basis=&#34;736px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后先选择2退出，因为各种原因，国内无法使用claude原生的模型，因此我们选择minimax的供应商，minimax原生支持anthropic协议，对claude支持会比较好。&lt;/p&gt;
+&lt;h3 id=&#34;步骤三申请-minimax-的api-key&#34;&gt;步骤三、申请 Minimax 的API Key
+&lt;/h3&gt;&lt;p&gt;来到minimax的开发者平台 &lt;a class=&#34;link&#34; href=&#34;https://platform.minimaxi.com/docs/api-reference/api-overview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://platform.minimaxi.com/docs/api-reference/api-overview&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;订阅并获取一个token plan的key&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211514123.png&#34;
+	width=&#34;818&#34;
+	height=&#34;283&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211514123_hu_3b57f27244c5326b.png 480w, https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211514123_hu_2c70f6a83dc5d9b9.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;289&#34;
+		data-flex-basis=&#34;693px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;步骤四下载cc-switch&#34;&gt;步骤四、下载CC-switch
+&lt;/h3&gt;&lt;p&gt;CC-Switch 是一个用于切换 Claude Code 供应商（如官方、GLM、DeepSeek）的工具。https://github.com/farion1231/cc-switch/releases&lt;/p&gt;
+&lt;p&gt;安装完后配置：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;必须&lt;/strong&gt;先添加一个官方供应商（即使没账号），否则可能出错。&lt;/li&gt;
+&lt;li&gt;添加第三方供应商（如Minimax），输入 API Key。&lt;/li&gt;
+&lt;li&gt;点击「启用」你想要的供应商。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211922102.png&#34;
+	width=&#34;900&#34;
+	height=&#34;680&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211922102_hu_d24a03d8293898c9.png 480w, https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211922102_hu_4a0c64e3e960f621.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;132&#34;
+		data-flex-basis=&#34;317px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211944193.png&#34;
+	width=&#34;900&#34;
+	height=&#34;680&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211944193_hu_3c283803dc7ef161.png 480w, https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406211944193_hu_95e6ce9efe0b9e07.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;132&#34;
+		data-flex-basis=&#34;317px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;步骤五测试&#34;&gt;步骤五、测试
+&lt;/h3&gt;&lt;p&gt;添加并启用供应商以后，来到vscode随便打开一个工作文件夹，创建一个新的终端，输入 &lt;code&gt;claude&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406212209353.png&#34;
+	width=&#34;480&#34;
+	height=&#34;350&#34;
+	srcset=&#34;https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406212209353_hu_1370e6cf7cbe8758.png 480w, https://Inorysekiro2333.github.io/p/%E5%AD%A6%E4%B9%A0agent-skill/image-20260406212209353_hu_dd5a87681f1ab2b4.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;137&#34;
+		data-flex-basis=&#34;329px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;显示模型为MiniMax-M2.7，并且可以成功调用，说明已经配置好了&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;什么是skill&#34;&gt;什么是Skill？
+&lt;/h2&gt;&lt;p&gt;一句话总结：Skill就是&lt;strong&gt;封装好的标准化工作流 / 专业知识&lt;/strong&gt;（Markdown + 脚本），告诉 AI &lt;strong&gt;&amp;ldquo;按什么步骤、规范、逻辑&amp;rdquo;&lt;/strong&gt; 完成任务&lt;/p&gt;
+&lt;p&gt;一个skill的目录结构一般长这样：&lt;/p&gt;
+&lt;img src=&#34;1856022879367403.jpg&#34; style=&#34;zoom:30%;&#34; /&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;qiuzhi-creative/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── SKILL.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── scripts/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── references/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── assets/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;基本上一个skill都包含这些文件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;SKILL.md&lt;/strong&gt;：存放描述Skill的元信息，告诉agent应该怎么使用这个skill&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;scripts&lt;/strong&gt;：存放执行脚本，agent一般是不会看里面的具体实现的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;references&lt;/strong&gt;：参考文档，在SKILL.md写的操作指南中，会引导ai根据不同的需求情况来参考references下的文档，所以这里面放的文档可以进一步的细分（SKILL.md教ai怎么使用skill，references的md提供具体使用案例供ai参考）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;assets&lt;/strong&gt;：也是存放参考资产的目录（可以放图片、json、html）来进一步约束skill的使用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;skillmd-详解&#34;&gt;SKILL.md 详解
+&lt;/h2&gt;&lt;p&gt;SKILL.md 是 Skill 的核心入口文件，agent 会读取这个文件来理解如何使用这个技能。&lt;/p&gt;
+&lt;h3 id=&#34;基本结构&#34;&gt;基本结构
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;name: skill-name
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;description: 一句话描述这个技能的作用
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# Skill Title
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;详细描述这个技能的功能和使用场景。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## When to Use
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;描述什么时候应该使用这个技能。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## How to Use
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;详细的使用说明和步骤。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;关键字段&#34;&gt;关键字段
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;name&lt;/strong&gt;：Skill 的名称，使用 kebab-case 命名&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;description&lt;/strong&gt;：简短描述，用于 agent 判断何时调用此技能&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;When to Use&lt;/strong&gt;：触发条件，告诉 agent 在什么情况下使用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How to Use&lt;/strong&gt;：具体使用方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;编写技巧&#34;&gt;编写技巧
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;description 要具体&lt;/strong&gt;：让 agent 能准确判断是否需要调用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;When to Use 要清晰&lt;/strong&gt;：列出具体的触发场景&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How to Use 要详细&lt;/strong&gt;：包含命令、参数、示例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;创建自己的-skill&#34;&gt;创建自己的 Skill
+&lt;/h2&gt;&lt;h3 id=&#34;需求分析&#34;&gt;需求分析
+&lt;/h3&gt;&lt;p&gt;在创建之前，先问自己：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个 Skill 解决什么问题？&lt;/li&gt;
+&lt;li&gt;什么时候应该调用它？&lt;/li&gt;
+&lt;li&gt;需要哪些输入和输出？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;目录结构&#34;&gt;目录结构
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;my-skill/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── SKILL.md              # 核心文件
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── scripts/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── run.sh           # 执行脚本
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├── references/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│   └── guide.md         # 参考文档
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└── assets/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    └── template.json    # 资源文件
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;编写-skillmd&#34;&gt;编写 SKILL.md
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;name: my-skill
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;description: 解决某个特定任务的技能
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# My Skill
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## Overview
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;简要描述这个技能的功能。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## When to Use
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 用户要求完成某某任务时
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 遇到某个特定问题时
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## How to Use
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 第一步操作
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; 第二步操作
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;3.&lt;/span&gt; 第三步操作
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## Parameters
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; param1: 参数说明
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; param2: 参数说明
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;部署-skill&#34;&gt;部署 Skill
+&lt;/h3&gt;&lt;p&gt;将完整的 Skill 目录放入 Claude Code 的 skills 目录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows: &lt;code&gt;C:\Users\&amp;lt;用户名&amp;gt;\.claude\skills\&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;macOS/Linux: &lt;code&gt;~/.claude/skills/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;放入后重启 Claude Code 即可使用。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;常用-skill-推荐&#34;&gt;常用 Skill 推荐
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;paper-2-web&lt;/strong&gt;：将论文转换为网站/海报/视频&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;simplify&lt;/strong&gt;：代码优化和重构&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;planning-with-files&lt;/strong&gt;：基于文件的复杂任务规划&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;docx&lt;/strong&gt;：Word 文档处理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;xlsx&lt;/strong&gt;：Excel 表格处理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pdf&lt;/strong&gt;：PDF 文档处理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;参考资源&#34;&gt;参考资源
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.claude.ai&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Claude Code 官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/anthropics/claude-code&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Skill 开发指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>【RAG项目】RAG项目实战</title>
         <link>https://Inorysekiro2333.github.io/p/rag%E9%A1%B9%E7%9B%AErag%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</link>
         <pubDate>Thu, 15 Jan 2026 12:57:15 +0800</pubDate>
