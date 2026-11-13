@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://Inorysekiro2333.github.io/zh-cn/sitemap.xml</loc>
-    
-      <lastmod>2026-04-19T00:00:11+08:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://Inorysekiro2333.github.io/en/sitemap.xml</loc>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://Inorysekiro2333.github.io/ja/sitemap.xml</loc>
-    
-      <lastmod>2026-01-11T21:42:11+08:00</lastmod>
-    
-  </sitemap>
-  
+	
+		<sitemap>
+			<loc>https://Inorysekiro2333.github.io/zh-cn/sitemap.xml</loc>
+			
+				<lastmod>2026-11-14T00:00:09+08:00</lastmod>
+			
+		</sitemap>
+	
+		<sitemap>
+			<loc>https://Inorysekiro2333.github.io/en/sitemap.xml</loc>
+			
+		</sitemap>
+	
+		<sitemap>
+			<loc>https://Inorysekiro2333.github.io/ja/sitemap.xml</loc>
+			
+				<lastmod>2026-01-11T21:42:11+08:00</lastmod>
+			
+		</sitemap>
+	
 </sitemapindex>

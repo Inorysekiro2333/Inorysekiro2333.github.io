@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>InorySekiro</copyright>
-        <lastBuildDate>Wed, 11 Mar 2026 11:07:16 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Nov 2026 00:00:09 +0800</lastBuildDate><atom:link href="https://Inorysekiro2333.github.io/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【持续更新】HUGO操作手册</title>
         <link>https://Inorysekiro2333.github.io/p/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0hugo%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</link>
         <pubDate>Tue, 13 Jan 2026 11:22:27 +0800</pubDate>
@@ -224,7 +224,7 @@
 &lt;li&gt;触发器：每日0点&lt;/li&gt;
 &lt;li&gt;操作：
 &lt;ul&gt;
-&lt;li&gt;启动程序-&amp;gt;程序：&lt;code&gt;D:\Develop\Git\usr\bin\bash.exe&lt;/code&gt;，参数：&lt;code&gt;d:\Develop\hugo-blog\dev\auto_sync.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;启动程序-&amp;gt;程序：&lt;code&gt;D:\Develop\Git\usr\bin\bash.exe&lt;/code&gt;，参数：&lt;code&gt;d:\Projects\hugo-blog\dev\auto_sync.sh&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
